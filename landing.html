@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<title>Paula Cristobal Madina</title>
+
+<style>
+
+/* =====================
+   BASE
+===================== */
+
+body {
+  margin: 0;
+  background: #f5f1ea;
+  color: #111;
+  font-family: Inter, sans-serif;
+  line-height: 1.65;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/* =====================
+   HERO
+===================== */
+
+.hero {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 11vw;
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond/", serif;
+  font-size: clamp(3.9rem, 9vw, 8rem);
+  font-weight: 300;
+  margin: 2;
+  line-height: 0.92;
+  letter-spacing: -0.002em;
+}
+
+.hero p {
+  max-width: 400px;
+  margin-top: 1.2rem;
+  opacity: 0.9;
+}
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 80%;
+  position: relative;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 3rem;
+  font-size: 4rem;
+  animation: scrollText 18s linear infinite;
+}
+
+
+.marquee-track span {
+  font-size: 2rem;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+/* animation */
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* =====================
+   ABOUT
+===================== */
+
+.about {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+  padding: 8vw 9vw;
+  align-items: center;
+}
+
+/* soft background block */
+.about-box {
+  position: absolute;
+  inset: 10% 7%;
+  background: #c1d4da;
+  border-radius: 26px;
+  transform: rotate(-0.5deg);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.10);
+  z-index: 0;
+}
+
+/* portrait */
+.about img {
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+
+  clip-path: polygon(
+    10% 0%,
+    92% 6%,
+    100% 88%,
+    12% 100%
+  );
+
+  transform: rotate(-1.8deg);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  transition: transform 0.5s ease;
+}
+
+.about img:hover {
+  transform: rotate(-0.8deg) scale(1.02);
+}
+
+.about-text {
+  position: relative;
+  z-index: 1;
+}
+
+.about-text h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+/* =====================
+   CV 
+===================== */
+
+.cv {
+  padding: 6vw 8vw;
+  max-width: 900px;
+}
+
+.cv-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.cv-item {
+  border-bottom: 1px solid rgba(0,0,0,0.14);
+}
+
+.cv-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 0;
+  font-size: 1.35rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.cv-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.cv-company {
+  color: #429ba6;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.cv-company:hover {
+  opacity: 0.6;
+}
+
+.cv-item.active .cv-content {
+  max-height: 2500px;
+  padding-bottom: 1rem;
+}
+
+.cv-content p {
+  margin: 0.45rem 0;
+}
+
+/* =====================
+   PROJECTS FLOATINESS 
+===================== */
+
+.project {
+  padding: 7vw 8vw;
+}
+
+
+.project-info h3 {
+  transition: transform 0.35s ease;
+}
+
+.project:hover .project-info h3 {
+  transform: translateY(-2px);
+}
+
+/* image feels “placed on paper” */
+.project img {
+  margin-bottom: 1.6rem;
+  transform: scale(1.01);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.project img:hover {
+  transform: scale(1.03);
+  filter: contrast(1.05);
+}
+
+/* title animation */
+.project-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* subtle spacing*/
+.project-info p {
+  max-width: 520px;
+  margin-top: 0.4rem;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 0.6rem;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #111;
+}
+
+/* hover lift (quiet, not “bounce”) */
+.project {
+  transition: transform 0.4s ease;
+}
+
+.project:hover {
+  transform: translateY(-6px) translateX(0);
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+footer {
+  padding: 4rem;
+  text-align: center;
+}
+
+.footer-art {
+  padding: 2rem 8vw 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-art img {
+  max-width: 340px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Paula<br>Cristobal Madina</h1>
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Multimedia journalist exploring food systems and relationship to landscape.</span>
+    <span>Multimedia journalist exploring food systems and relationship to landscape.</span>
+    <span>Multimedia journalist exploring food systems and relationship to landscape.</span>
+  </div>
+</div></section>
+
+
+<!-- ABOUT -->
+<section class="about">
+
+  <div class="about-box"></div>
+
+  <img src="static/paula_photos/bio/IMG_8466.jpg">
+
+  <div class="about-text">
+    <h2>About</h2>
+
+    <p>Originally from the Basque Country, I’m a multimedia journalist working around food, land, and the ways people make sense of place through foraging, farming, cooking and gathering.</p>
+
+    <p>My work often starts with food and moves outward into stories about climate change, memory, and relationships to land and water, where what we eat becomes a way into how people live and what is changing around them.</p>
+
+    <p>I move between documenting these worlds and creating projects that invite people into them. Through my work I aim to support the places and practices that sustain us.</p>
+  </div>
+
+</section>
+
+<!-- CV -->
+<section class="cv">
+
+  <h2 class="cv-title">CV</h2>
+
+  <div class="cv-item">
+    <button class="cv-toggle">Education</button>
+    <div class="cv-content">
+      <p><strong>UC Berkeley— expected May 2027</strong></p>
+      <p>Master of Journalism (Multimedia)</p>
+      <p>Graduate Certificate in Food Systems</p>
+
+      <p><strong>Wageningen University & Research, September 2020— May 2024</strong></p>
+      <p>BSc Environmental Sciences (Resilient Food Systems)</p>
+    </div>
+  </div>
+<div class="cv-item">
+
+  <button class="cv-toggle">Experience</button>
+
+  <div class="cv-content">
+
+    <p>
+      <a 
+        href="https://journalism.berkeley.edu/course-section/j213-advanced-photography-real-eyes/" 
+        target="_blank"
+        class="cv-company"
+      >
+        Real Eyes Magazine
+      </a>
+    </p>
+
+    <p>Contributing photojournalist</p>
+
+    <p>
+      <a 
+        href="https://oaklandnorth.net/author/paula-cristobal/" 
+        target="_blank"
+        class="cv-company"
+      >
+        Oakland North
+      </a>
+    </p>
+
+    <p>Reporter</p>
+
+    <p>
+      <a 
+        href="https://www.slowfoodeastbay.com/news" 
+        target="_blank"
+        class="cv-company"
+      >
+        Slow Food East Bay
+      </a>
+    </p>
+
+    <p>Newsletter writer</p>
+
+  </div>
+
+</div>
+
+  <div class="cv-item">
+    <button class="cv-toggle">Languages</button>
+    <div class="cv-content">
+      <p>Spanish – Native</p>
+      <p>Basque – Native</p>
+      <p>English – Fluent</p>
+      <p>French – Advanced</p>
+      <p>Italian – Conversational</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section class="project">
+  <img src="static/IMG_9706.JPG">
+  <div class="project-info">
+    <h3>Foragers of the Bay</h3>
+    <p>A photographic exploration of foraging communities.</p>
+    <a href="foragers.html">View Story</a>
+  </div>
+</section>
+
+<section class="project">
+  <img src="static/paula_photos/alcatrazfoto/IMG_8624.JPG">
+  <div class="project-info">
+    <h3>Indigenous Sunrise Gathering</h3>
+    <p>Documentation of sunrise gathering on Alcatraz Island.</p>
+    <a href="ohlone.html">View Story</a>
+  </div>
+</section>
+
+<footer>© Paula Cristobal Madina</footer>
+
+<section class="footer-art">
+  <img src="static/deer2-removebg-preview.png">
+</section>
+
+<script>
+document.querySelectorAll(".cv-toggle").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>

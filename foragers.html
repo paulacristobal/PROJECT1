@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Foragers of the Bay</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Libre+Baskerville:wght@400;700&display=swap');
+
+/* ================= BASE ================= */
+
+body{
+    margin: 0;
+    background: #0e0e0e;
+    color: #fffafa;
+    font-family: "Libre Baskerville", serif;
+    overflow-x: hidden;
+}
+
+/* ================= BACKGROUND IMAGE ================= */
+
+.image-panel{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.image-panel img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: none;
+    transform: scale(1.03);
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+.image-panel::after{
+    content:"";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.55)
+    );
+}
+
+/* ================= TEXT LAYOUT ================= */
+
+.wrapper{
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.content{
+    width: 100%;
+    padding: 10vh 10vw;
+    max-width: 900px;
+}
+
+/* TITLE */
+h1{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+}
+
+/* ================= STORY STEPS ================= */
+
+.step{
+    margin-bottom: 45vh;
+    opacity: 0.25;
+    transition: opacity 0.5s ease;
+}
+
+.step.active{
+    opacity: 1;
+}
+
+/* TEXT */
+.text{
+    font-size: 1.2rem;
+    line-height: 1.9;
+    max-width: 600px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+}
+
+/* CAPTION */
+.caption{
+    margin-top: 1rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    letter-spacing: 0.08em;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px){
+    .content{
+        padding: 8vh 6vw;
+    }
+
+    h1{
+        font-size: 1.6rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND IMAGE -->
+<div class="image-panel">
+    <img id="mainImage" src="static/paula_photos/Paula_Photos/IMG_9648.jpg">
+</div>
+
+<!-- CONTENT -->
+<div class="wrapper">
+
+    <div class="content">
+
+        <h1>Foragers of the Bay</h1>
+
+        <div class="step active" data-img="static/paula_photos/Paula_Photos/IMG_9648.jpg">
+            <div class="text">For those with trained eyes and hands, food is available all around.</div>
+        </div>
+
+        <div class="step active" data-img="static/paula_photos/Paula_Photos/IMG_0268.jpg">
+            <div class="text">Foraging unsettles the line between what counts as food and what does not.</div>
+        </div>
+
+        
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_9849.jpg">
+            <div class="text">You will not find miner’s lettuce, wild mustard pickles, or oddly shaped lemons in the supermarket, yet they are everywhere.</div>
+        </div>
+
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_0200.jpg">
+            <div class="text">Food changes with seasons. Mussels are gathered in months with an “r”. Seaweed shifts with cold currents. Fennel goes to seed along roadsides in the heat.</div>
+        </div>
+
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_9557.jpg">
+            <div class="text">Magnolia trees bloom from winter into spring, leaving behind a blanket of pink petals that disappears back into the ground. Nothing stays fixed.</div>
+        </div>
+
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_0130.jpg">
+            <div class="text">Nature moves in cycles of arrival and disappearance. Foraging anchors us right into the present time and space.</div>
+        </div>
+
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_0269.jpg">
+            <div class="text">This project follows foragers in the Bay Area building a relationship with the local ecosystem through practice.</div>
+        </div>
+
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_0287.jpg">
+            <div class="text">They learn edible species, how to harvest them, and how to work with what the land has to offer.</div>
+        </div>
+
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_0298.jpg">
+            <div class="text">In tidepools in Mendocino, they pull purple sea urchins from rocks, making space for kelp forests to return.</div>
+        </div>
+
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_8322.jpg">
+            <div class="text">They gather wild mustard, fennel fronds, and nasturtium seeds, packing them into jars with brine until they ferment and shift.</div>
+        </div>
+           <div class="step" data-img= "static/paula_photos/Paula_Photos/IMG_9841.jpg">
+            <div class="text">They learn to slaughter sheep, and how to use every part of the animal.</div>
+
+        </div>
+
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_8323.jpg">
+            <div class="text">Photographing them is witnessing an emerging and ancient way of belonging and reciprocity.</div>
+        </div>
+
+        <div class="step" data-img="static/paula_photos/Paula_Photos/IMG_9578.jpg">
+            <div class="text">A way of learning this place my immersing in the stories and flavors of the land.</div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+
+const steps = document.querySelectorAll(".step");
+const img = document.getElementById("mainImage");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            steps.forEach(s => s.classList.remove("active"));
+            entry.target.classList.add("active");
+
+            const newImg = entry.target.dataset.img;
+
+            img.style.opacity = 0;
+
+            setTimeout(() => {
+                img.src = newImg;
+                img.style.opacity = 1;
+            }, 250);
+        }
+
+    });
+}, {
+    threshold: 0.5
+});
+
+steps.forEach(step => observer.observe(step));
+
+</script>
+
+</body>
+</html>
